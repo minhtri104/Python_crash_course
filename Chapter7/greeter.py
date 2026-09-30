@@ -1,0 +1,5 @@
+prompt = "If you tell us who you are, we can personalize the greeting you see."
+prompt += "What is your first name? "
+
+name = input(prompt)
+print("\nHello, " + name + "!")
