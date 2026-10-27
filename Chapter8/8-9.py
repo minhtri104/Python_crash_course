@@ -5,10 +5,10 @@ def show_magicians(magicians):
 
 
 # 8-10 thêm hàm make_great()
-def make_great():
+def make_great(magicians):
     """Thêm  cụ từ 'the Great' vào tên từng ảo thuật gia trong danh sách"""
-    for i in range(len(magicians_list)):
-        magicians_list[i] = magicians_list[i] + " the Great."
+    for i in range(len(magicians)):
+        magicians[i] = magicians[i] + " the Great."
 
 
 # Danh sách các ảo thuật gia
