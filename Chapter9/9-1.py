@@ -7,7 +7,7 @@ class restaurant:
 
     def describe_restaurant(self):
         """Mô tả thông tin về nhà hàng"""
-        print("Restaurant name: " + self.restaurant_name)
+        print("\nRestaurant name: " + self.restaurant_name)
         print("Cuisine type: " + self.cuisine_type)
 
     def open_restaurant(self):
@@ -15,10 +15,15 @@ class restaurant:
         print(self.restaurant_name + " is open now!")
 
 
-restaurant = restaurant("Bún chả Hương Liên", "Bún chả")
+restaurant1 = restaurant("Bún chả Hương Liên", "Bún chả")
+restaurant2 = restaurant("Bún đậu mắm tôm", "Bún đậu")
+restaurant3 = restaurant("Bún bò Huế", "Bún bò")
 
-print(restaurant.restaurant_name)
-print(restaurant.cuisine_type)
+# print(restaurant.restaurant_name)
+# print(restaurant.cuisine_type)
 
-restaurant.describe_restaurant()
-restaurant.open_restaurant()
+restaurant1.describe_restaurant()
+restaurant2.describe_restaurant()
+restaurant3.describe_restaurant()
+
+# restaurant.open_restaurant()
