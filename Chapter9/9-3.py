@@ -6,6 +6,7 @@ class User:
         self.first_name = first_name
         self.last_name = last_name
         self.user_info = user_info
+        self.login_attempts = 0
 
     def describe_user(self):
         """Tóm tắt thông tin người dùng"""
@@ -17,6 +18,14 @@ class User:
     def greet_user(self):
         """Chào người dùng"""
         print("Xin chào, " + self.first_name + " " + self.last_name + "!")
+
+    def increment_login_attempts(self):
+        """Tăng số lần đăng nhập"""
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        """Đặt lại số lần đăng nhập về 0"""
+        self.login_attempts = 0
 
 
 user1 = User(
@@ -31,6 +40,15 @@ user3 = User(
 # user1
 user1.describe_user()
 user1.greet_user()
+# Sau khi đăng nhập
+user1.increment_login_attempts()
+user1.increment_login_attempts()
+user1.increment_login_attempts()
+print(f"Số lần đăng nhập: {user1.login_attempts}")
+# Sau khi reset
+user1.reset_login_attempts()
+print(f"Số lần đăng nhập sau khi reset: {user1.login_attempts}")
+
 
 # user2
 user2.describe_user()
