@@ -31,6 +31,10 @@ class Car:
         """Tăng số dặm đã đi được với giá trị cho trước"""
         self.odometer_reading += miles
 
+    def fill_gas_tank(self):
+        """Mô phỏng việc đổ xăng cho xe"""
+        print("This car needs a gas tank!")
+
 
 class ElectricCar(Car):
     def __init__(self, make, model, year):
@@ -40,6 +44,10 @@ class ElectricCar(Car):
     def describe_battery(self):
         """In ra thông tin về pin của xe điện"""
         print("This car has a " + str(self.battery_size) + "-kWh battery.")
+
+    def fill_gas_tank(self):
+        """Mô phỏng việc đổ xăng cho xe điện"""
+        print("This car doesn't need a gas tank!")
 
 
 my_new_car = Car("audi", "a4", 2019)
@@ -55,3 +63,7 @@ my_tesla = ElectricCar("tesla", "model s", 2019)
 print(my_tesla.get_descriptive_name())
 # in dung lượng pin
 my_tesla.describe_battery()
+
+# Overriding - ghi đè phương thức fill_gas_tank() của lớp Car
+my_new_car.fill_gas_tank()
+my_tesla.fill_gas_tank()
