@@ -1,3 +1,6 @@
+"""A class that can be used to represent a car."""
+
+
 class Car:
     """A simple attempt to represent a car."""
 
@@ -34,61 +37,3 @@ class Car:
     def fill_gas_tank(self):
         """Mô phỏng việc đổ xăng cho xe"""
         print("This car needs a gas tank!")
-
-
-class Battery:
-    """Mô hình hóa pin của xe điện"""
-
-    def __init__(self, battery_size=70):
-        """Khởi tạo các thuộc tính của pin"""
-        self.battery_size = battery_size
-
-    def describe_battery(self):
-        """In ra thông tin về pin của xe điện"""
-        print("This car has a " + str(self.battery_size) + "-kWh battery.")
-
-    def get_range(self):
-        """Hiên thị phạm vi di chuyển dựa trên dung lượng pin"""
-        if self.battery_size == 70:
-            driving_range = 240
-        elif self.battery_size == 85:
-            driving_range = 270
-        else:
-            driving_range = 0
-        message = "This car can go approximately " + str(driving_range)
-        message += " miles on a full charge."
-        print(message)
-
-
-class ElectricCar(Car):
-    def __init__(self, make, model, year):
-        super().__init__(make, model, year)
-        self.battery = Battery()
-
-    def describe_battery(self):
-        """In ra thông tin về pin của xe điện"""
-        self.battery.describe_battery()
-
-    def fill_gas_tank(self):
-        """Mô phỏng việc đổ xăng cho xe điện"""
-        print("This car doesn't need a gas tank!")
-
-
-my_new_car = Car("audi", "a4", 2019)
-print(my_new_car.get_descriptive_name())
-
-my_new_car.update_odometer(25000)
-my_new_car.read_odometer()
-
-my_new_car.increment_odometer(100)
-my_new_car.read_odometer()
-
-my_tesla = ElectricCar("tesla", "model s", 2019)
-print(my_tesla.get_descriptive_name())
-# in dung lượng pin
-my_tesla.battery.describe_battery()
-my_tesla.battery.get_range()
-
-# Overriding - ghi đè phương thức fill_gas_tank() của lớp Car
-my_new_car.fill_gas_tank()
-my_tesla.fill_gas_tank()
